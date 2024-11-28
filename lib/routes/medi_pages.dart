@@ -13,6 +13,11 @@ abstract class MediPages {
       ...SplashPages.routes,
       ...AuthPages.routes,
       ...HomePages.routes,
+      ...ExercisePages.routes,
+      ...GoalPags.routes,
+      ...NotificationPages.routes,
+      ...ProfilePages.routes,
+      ...TipsPages.routes,
     ],
   );
 }
