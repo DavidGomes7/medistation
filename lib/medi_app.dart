@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'modules/modules.dart';
 
-class MediStation extends StatelessWidget {
-  const MediStation({super.key});
+class MediApp extends StatelessWidget {
+  const MediApp({super.key});
 
   @override
   Widget build(BuildContext context) {
