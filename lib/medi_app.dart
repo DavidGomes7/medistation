@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'modules/modules.dart';
+import 'routes/medi_pages.dart';
 
 class MediApp extends StatelessWidget {
   const MediApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return MaterialApp.router(
+      routerConfig: MediPages.router,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

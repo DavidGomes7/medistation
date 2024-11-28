@@ -1,16 +1,15 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../interfaces/interfaces.dart';
+import '../interfaces.dart';
 
 class GoRouterImpl implements MediRouter {
-  const GoRouterImpl(this.context);
+  const GoRouterImpl(this.router);
 
-  final BuildContext context;
+  final GoRouter router;
 
   @override
   void go(String location, {Object? extra}) {
-    context.go(location, extra: extra);
+    router.go(location, extra: extra);
   }
 
   @override
@@ -20,7 +19,7 @@ class GoRouterImpl implements MediRouter {
     Map<String, dynamic> queryParameters = const <String, dynamic>{},
     Object? extra,
   }) {
-    context.goNamed(
+    router.goNamed(
       name,
       pathParameters: pathParameters,
       queryParameters: queryParameters,
@@ -30,7 +29,7 @@ class GoRouterImpl implements MediRouter {
 
   @override
   Future<T?> push<T extends Object?>(String location, {Object? extra}) {
-    return context.push<T>(location, extra: extra);
+    return router.push<T>(location, extra: extra);
   }
 
   @override
@@ -40,7 +39,7 @@ class GoRouterImpl implements MediRouter {
     Map<String, dynamic> queryParameters = const <String, dynamic>{},
     Object? extra,
   }) {
-    return context.pushNamed<T>(
+    return router.pushNamed<T>(
       name,
       pathParameters: pathParameters,
       queryParameters: queryParameters,
@@ -50,11 +49,11 @@ class GoRouterImpl implements MediRouter {
 
   @override
   bool canPop() {
-    return context.canPop();
+    return router.canPop();
   }
 
   @override
   void pop<T extends Object?>([T? result]) {
-    context.pop(result);
+    router.pop(result);
   }
 }
