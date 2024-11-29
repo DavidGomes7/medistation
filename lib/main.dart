@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'interfaces/intefaces.dart';
 import 'medi_station.dart';
 
 void main() {
-  runApp(const MediStation());
+  runApp(
+    MediStation(
+      injector: GetItImpl(),
+    ),
+  );
 }
