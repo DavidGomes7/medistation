@@ -34,7 +34,7 @@ class MediButton extends StatelessWidget {
     required void Function() onPressed,
   }) {
     return MediButton._(
-      type: MediButtonType.google,
+      type: MediButtonType.primary,
       label: label,
       textStyle: textStyle ?? const TextStyle(color: MediColors.textSecondary),
       onPressed: onPressed,
