@@ -29,7 +29,6 @@ class HomeTemplate extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(),
     );
   }
 }
