@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components.dart';
+
 class HomeTemplate extends StatelessWidget {
   const HomeTemplate({super.key});
 
@@ -11,24 +13,7 @@ class HomeTemplate extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      drawer: const Drawer(
-        child: Padding(
-          padding: EdgeInsets.all(16),
-          child: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CircleAvatar(
-                  radius: 40,
-                  child: Icon(Icons.person),
-                ),
-                Text('Douglas Silva'),
-                Text('example@gmail.com'),
-              ],
-            ),
-          ),
-        ),
-      ),
+      drawer: const MediDrawer(),
     );
   }
 }
