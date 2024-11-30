@@ -14,6 +14,26 @@ class HomeTemplate extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       drawer: const MediDrawer(),
+      body: Column(
+        children: [
+          const Expanded(child: SizedBox()),
+          const Divider(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(onPressed: () {}, icon: Icon(Icons.replay_rounded)),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.play_arrow_rounded),
+                style: const ButtonStyle(
+                  iconSize: WidgetStatePropertyAll(75),
+                ),
+              ),
+              IconButton(onPressed: () {}, icon: Icon(Icons.stop))
+            ],
+          )
+        ],
+      ),
     );
   }
 }
