@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../components/components.dart';
 import '../../../routes/routes.dart';
 
 class SplashTemplate extends StatelessWidget {
@@ -7,11 +8,11 @@ class SplashTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: ElevatedButton(
+        child: MediButton.primary(
+          label: 'Go home',
           onPressed: MediNavigator.home,
-          child: Text('Go Home'),
         ),
       ),
     );
