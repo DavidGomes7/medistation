@@ -1,3 +1,4 @@
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 
 import '../../../theme/theme.dart';
@@ -16,7 +17,19 @@ class HomeTemplate extends StatelessWidget {
       ),
       drawer: const MediDrawer(),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Expanded(child: SizedBox()),
+          CircularCountDownTimer(
+            width: 250,
+            height: 250,
+            duration: 10,
+            strokeWidth: 20,
+            strokeCap: StrokeCap.round,
+            textStyle: const TextStyle(fontSize: 33),
+            fillColor: MediColors.primary,
+            ringColor: MediColors.textPrimary.withOpacity(0.08),
+          ),
           const Expanded(child: SizedBox()),
           const Divider(),
           Row(
