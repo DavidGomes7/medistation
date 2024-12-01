@@ -25,11 +25,15 @@ class HomeTemplate extends StatelessWidget {
               IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.play_arrow_rounded),
-                style: const ButtonStyle(
-                  iconSize: WidgetStatePropertyAll(75),
+                style: ButtonStyle(
+                  iconSize: const WidgetStatePropertyAll(75),
+                  iconColor: WidgetStatePropertyAll(Theme.of(context).colorScheme.primary),
                 ),
               ),
-              IconButton(onPressed: () {}, icon: Icon(Icons.stop))
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.stop),
+              )
             ],
           )
         ],
