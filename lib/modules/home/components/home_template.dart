@@ -49,7 +49,7 @@ class HomeTemplate extends StatelessWidget {
                 icon: const Icon(Icons.stop),
               )
             ],
-          )
+          ),
         ],
       ),
     );

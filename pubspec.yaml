@@ -8,11 +8,14 @@ environment:
   sdk: ^3.5.4
 
 dependencies:
+  circular_countdown_timer: ^0.2.4
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.6
   get_it: ^8.0.2
   go_router: ^14.6.1
+  just_audio: ^0.9.42
 
 dev_dependencies:
   flutter_test:
