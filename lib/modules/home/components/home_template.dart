@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../theme/theme.dart';
 import 'components.dart';
 
 class HomeTemplate extends StatelessWidget {
@@ -11,7 +12,7 @@ class HomeTemplate extends StatelessWidget {
       appBar: AppBar(
         title: const Text('MediStation'),
         centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: MediColors.primary,
       ),
       drawer: const MediDrawer(),
       body: Column(
@@ -21,18 +22,18 @@ class HomeTemplate extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.replay_rounded)),
+              IconButton(onPressed: () {}, icon: const Icon(Icons.replay_rounded)),
               IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.play_arrow_rounded),
-                style: ButtonStyle(
-                  iconSize: const WidgetStatePropertyAll(75),
-                  iconColor: WidgetStatePropertyAll(Theme.of(context).colorScheme.primary),
+                style: const ButtonStyle(
+                  iconSize: WidgetStatePropertyAll(75),
+                  iconColor: WidgetStatePropertyAll(MediColors.primary),
                 ),
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.stop),
+                icon: const Icon(Icons.stop),
               )
             ],
           )

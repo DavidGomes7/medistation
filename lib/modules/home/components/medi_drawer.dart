@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../theme/theme.dart';
+
 class MediDrawer extends StatelessWidget {
   const MediDrawer({super.key});
 
@@ -12,19 +14,20 @@ class MediDrawer extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(16),
             width: double.maxFinite,
-            color: Theme.of(context).colorScheme.inversePrimary,
-            child: const SafeArea(
+            color: MediColors.primary,
+            child: SafeArea(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CircleAvatar(
                     radius: 40,
-                    child: Icon(Icons.person),
+                    backgroundColor: MediColors.background.withOpacity(0.5),
+                    child: const Icon(Icons.person),
                   ),
-                  SizedBox(height: 8),
-                  Text('Douglas Silva', style: TextStyle(fontSize: 16)),
-                  SizedBox(height: 8),
-                  Text('example@gmail.com'),
+                  const SizedBox(height: 8),
+                  const Text('Douglas Silva', style: TextStyle(fontSize: 16)),
+                  const SizedBox(height: 8),
+                  const Text('example@gmail.com'),
                 ],
               ),
             ),
