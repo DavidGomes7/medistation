@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'routes/medi_pages.dart';
+import 'theme/theme.dart';
 
 class MediApp extends StatelessWidget {
   const MediApp({super.key});
@@ -8,8 +9,9 @@ class MediApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routerConfig: MediPages.router,
       debugShowCheckedModeBanner: false,
+      routerConfig: MediPages.router,
+      theme: MediThemeData.mediTheme,
     );
   }
 }
