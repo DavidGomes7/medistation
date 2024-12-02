@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 
-import '../components/tips_template.dart';
+import '../pages/tips_page.dart';
 import 'tips_routes.dart';
 
 abstract class TipsPages {
@@ -8,7 +8,7 @@ abstract class TipsPages {
     GoRoute(
       path: TipsRoutes.tips,
       name: TipsRoutes.tips,
-      builder: (context, state) => const TipsTemplate(),
+      builder: (context, state) => const TipsPage(),
     ),
   ];
 }
