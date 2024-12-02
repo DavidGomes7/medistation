@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../../../interfaces/intefaces.dart';
 import '../components/components.dart';
+import '../controller/controller.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const ProfileTemplate();
+    return ProfileTemplate(
+      controller: injector.get<ProfileCubit>(),
+    );
   }
 }
