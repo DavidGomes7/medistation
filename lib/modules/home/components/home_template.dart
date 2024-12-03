@@ -1,7 +1,9 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 
+import '../../../theme/theme.dart';
 import '../../modules.dart';
+import 'components.dart';
 
 class HomeTemplate extends StatelessWidget {
   const HomeTemplate({super.key, required this.controller});
@@ -22,7 +24,7 @@ class HomeTemplate extends StatelessWidget {
         children: [
           const Expanded(child: SizedBox()),
           CircularCountDownTimer(
-            controller: countDownController,
+            // controller: countDownController,
             autoStart: false,
             width: 250,
             height: 250,
@@ -39,31 +41,19 @@ class HomeTemplate extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                onPressed: countDownController.restart,
+                onPressed: () {},
                 icon: const Icon(Icons.replay_rounded),
               ),
               IconButton(
-                onPressed: () {
-                  if (!isPlaying) {
-                    setState(() {
-                      isPlaying = true;
-                      countDownController.start();
-                    });
-                  } else {
-                    setState(() {
-                      isPlaying = false;
-                      countDownController.pause();
-                    });
-                  }
-                },
-                icon: Icon(isPlaying ? Icons.pause_outlined : Icons.play_arrow_rounded),
+                onPressed: () {},
+                icon: Icon(Icons.play_arrow_rounded),
                 style: const ButtonStyle(
                   iconSize: WidgetStatePropertyAll(75),
                   iconColor: WidgetStatePropertyAll(MediColors.primary),
                 ),
               ),
               IconButton(
-                onPressed: countDownController.reset,
+                onPressed: () {},
                 icon: const Icon(Icons.stop),
               ),
             ],
