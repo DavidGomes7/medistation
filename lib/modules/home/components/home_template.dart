@@ -1,30 +1,12 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
-import 'package:just_audio/just_audio.dart';
 
-import '../../../theme/theme.dart';
-import 'components.dart';
+import '../../modules.dart';
 
-class HomeTemplate extends StatefulWidget {
-  const HomeTemplate({super.key});
+class HomeTemplate extends StatelessWidget {
+  const HomeTemplate({super.key, required this.controller});
 
-  @override
-  State<HomeTemplate> createState() => _HomeTemplateState();
-}
-
-class _HomeTemplateState extends State<HomeTemplate> {
-  final countDownController = CountDownController();
-  final player = AudioPlayer();
-
-  bool isPlaying = false;
-
-  @override
-  void initState() {
-    player.setUrl(
-      'https://archive.org/download/calm-day-wkmllb/Mellow%20Blush%20%26%20Light%20Blending%20In%20-%20Calm%20Day.mp3',
-    );
-    super.initState();
-  }
+  final HomeCubit controller;
 
   @override
   Widget build(BuildContext context) {

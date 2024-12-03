@@ -10,8 +10,10 @@ environment:
 dependencies:
   circular_countdown_timer: ^0.2.4
   cupertino_icons: ^1.0.8
+  equatable: ^2.0.7
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.6
   flutter_bloc: ^8.1.6
   get_it: ^8.0.2
   go_router: ^14.6.1
