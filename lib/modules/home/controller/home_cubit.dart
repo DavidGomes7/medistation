@@ -14,32 +14,32 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   void play() {
-    emit(PlayHomeState());
     player.play();
     countDownController.start();
+    emit(PlayHomeState());
   }
 
   void pause() {
-    emit(PauseHomeState());
     player.pause();
     countDownController.pause();
+    emit(PauseHomeState());
   }
 
   void resume() {
-    emit(PlayHomeState());
     player.play();
     countDownController.resume();
+    emit(PlayHomeState());
   }
 
   void restart() {
-    emit(PlayHomeState());
     player.load();
     countDownController.restart();
+    emit(PlayHomeState());
   }
 
   void stop() {
-    emit(InitialHomeState());
     player.stop();
     countDownController.reset();
+    emit(InitialHomeState());
   }
 }
