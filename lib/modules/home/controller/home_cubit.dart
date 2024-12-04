@@ -7,7 +7,9 @@ class HomeCubit extends Cubit<HomeState> {
   CountDownController countDownController = CountDownController();
   AudioPlayer player = AudioPlayer();
 
-  HomeCubit() : super(InitialHomeState()) {
+  HomeCubit() : super(InitialHomeState());
+
+  void init() {
     player.setUrl(
       'https://archive.org/download/calm-day-wkmllb/Mellow%20Blush%20%26%20Light%20Blending%20In%20-%20Calm%20Day.mp3',
     );

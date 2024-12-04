@@ -14,6 +14,7 @@ class HomeTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    controller.init();
     return Scaffold(
       appBar: AppBar(
         title: const Text('MediStation'),
