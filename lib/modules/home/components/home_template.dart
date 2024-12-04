@@ -1,8 +1,10 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../theme/theme.dart';
 import '../../modules.dart';
+import '../controller/home_state.dart';
 import 'components.dart';
 
 class HomeTemplate extends StatelessWidget {
@@ -24,7 +26,7 @@ class HomeTemplate extends StatelessWidget {
         children: [
           const Expanded(child: SizedBox()),
           CircularCountDownTimer(
-            // controller: countDownController,
+            controller: controller.countDownController,
             autoStart: false,
             width: 250,
             height: 250,
@@ -41,19 +43,47 @@ class HomeTemplate extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: controller.restart,
                 icon: const Icon(Icons.replay_rounded),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.play_arrow_rounded),
-                style: const ButtonStyle(
-                  iconSize: WidgetStatePropertyAll(75),
-                  iconColor: WidgetStatePropertyAll(MediColors.primary),
-                ),
+              BlocBuilder<HomeCubit, HomeState>(
+                bloc: controller,
+                builder: (_, state) {
+                  if (state is InitialHomeState) {
+                    return IconButton(
+                      onPressed: controller.play,
+                      icon: const Icon(Icons.play_arrow_rounded),
+                      style: const ButtonStyle(
+                        iconSize: WidgetStatePropertyAll(75),
+                        iconColor: WidgetStatePropertyAll(MediColors.primary),
+                      ),
+                    );
+                  }
+                  if (state is PlayHomeState) {
+                    return IconButton(
+                      onPressed: controller.pause,
+                      icon: const Icon(Icons.pause),
+                      style: const ButtonStyle(
+                        iconSize: WidgetStatePropertyAll(75),
+                        iconColor: WidgetStatePropertyAll(MediColors.primary),
+                      ),
+                    );
+                  }
+                  if (state is PauseHomeState) {
+                    return IconButton(
+                      onPressed: controller.resume,
+                      icon: const Icon(Icons.play_arrow_rounded),
+                      style: const ButtonStyle(
+                        iconSize: WidgetStatePropertyAll(75),
+                        iconColor: WidgetStatePropertyAll(MediColors.primary),
+                      ),
+                    );
+                  }
+                  return Container();
+                },
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: controller.stop,
                 icon: const Icon(Icons.stop),
               ),
             ],

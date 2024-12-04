@@ -1,21 +1,7 @@
-part of 'home_cubit.dart';
+abstract class HomeState {}
 
-sealed class HomeState extends Equatable {
-  const HomeState();
+class InitialHomeState extends HomeState {}
 
-  @override
-  List<Object> get props => [];
-}
+class PlayHomeState extends HomeState {}
 
-final class HomeInitial extends HomeState {}
-
-final class HomeLoading extends HomeState {}
-
-final class HomeError extends HomeState {
-  const HomeError(this.error);
-
-  final String error;
-
-  @override
-  List<Object> get props => [];
-}
+class PauseHomeState extends HomeState {}
