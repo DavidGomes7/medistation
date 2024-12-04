@@ -17,19 +17,19 @@ abstract class MediNavigator {
     return router.go(HomeRoutes.home);
   }
 
-  static void goal() {
-    return router.go(GoalRoutes.goal);
+  static Future<void> goal() {
+    return router.pushNamed(GoalRoutes.goal);
   }
 
-  static void notification() {
-    return router.go(NotificationRoutes.notification);
+  static Future<void> notification() {
+    return router.pushNamed(NotificationRoutes.notification);
   }
 
-  static void profile() {
-    return router.go(ProfileRoutes.profile);
+  static Future<void> profile() {
+    return router.pushNamed(ProfileRoutes.profile);
   }
 
-  static void tips() {
-    return router.go(TipsRoutes.tips);
+  static Future<void> tips() {
+    return router.pushNamed(TipsRoutes.tips);
   }
 }
