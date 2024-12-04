@@ -21,10 +21,9 @@ class HomeTemplate extends StatelessWidget {
         backgroundColor: MediColors.primary,
       ),
       drawer: const MediDrawer(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
         children: [
-          const Expanded(child: SizedBox()),
+          SizedBox(height: MediaQuery.of(context).size.height / 4),
           CircularCountDownTimer(
             controller: controller.countDownController,
             autoStart: false,
@@ -37,56 +36,54 @@ class HomeTemplate extends StatelessWidget {
             fillColor: MediColors.primary,
             ringColor: MediColors.textPrimary.withOpacity(0.08),
           ),
-          const Expanded(child: SizedBox()),
-          const Divider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                onPressed: controller.restart,
-                icon: const Icon(Icons.replay_rounded),
-              ),
-              BlocBuilder<HomeCubit, HomeState>(
-                bloc: controller,
-                builder: (_, state) {
-                  if (state is InitialHomeState) {
-                    return IconButton(
-                      onPressed: controller.play,
-                      icon: const Icon(Icons.play_arrow_rounded),
-                      style: const ButtonStyle(
-                        iconSize: WidgetStatePropertyAll(75),
-                        iconColor: WidgetStatePropertyAll(MediColors.primary),
-                      ),
-                    );
-                  }
-                  if (state is PlayHomeState) {
-                    return IconButton(
-                      onPressed: controller.pause,
-                      icon: const Icon(Icons.pause),
-                      style: const ButtonStyle(
-                        iconSize: WidgetStatePropertyAll(75),
-                        iconColor: WidgetStatePropertyAll(MediColors.primary),
-                      ),
-                    );
-                  }
-                  if (state is PauseHomeState) {
-                    return IconButton(
-                      onPressed: controller.resume,
-                      icon: const Icon(Icons.play_arrow_rounded),
-                      style: const ButtonStyle(
-                        iconSize: WidgetStatePropertyAll(75),
-                        iconColor: WidgetStatePropertyAll(MediColors.primary),
-                      ),
-                    );
-                  }
-                  return Container();
-                },
-              ),
-              IconButton(
-                onPressed: controller.stop,
-                icon: const Icon(Icons.stop),
-              ),
-            ],
+        ],
+      ),
+      bottomNavigationBar: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          IconButton(
+            onPressed: controller.restart,
+            icon: const Icon(Icons.replay_rounded),
+          ),
+          BlocBuilder<HomeCubit, HomeState>(
+            bloc: controller,
+            builder: (_, state) {
+              if (state is InitialHomeState) {
+                return IconButton(
+                  onPressed: controller.play,
+                  icon: const Icon(Icons.play_arrow_rounded),
+                  style: const ButtonStyle(
+                    iconSize: WidgetStatePropertyAll(75),
+                    iconColor: WidgetStatePropertyAll(MediColors.primary),
+                  ),
+                );
+              }
+              if (state is PlayHomeState) {
+                return IconButton(
+                  onPressed: controller.pause,
+                  icon: const Icon(Icons.pause),
+                  style: const ButtonStyle(
+                    iconSize: WidgetStatePropertyAll(75),
+                    iconColor: WidgetStatePropertyAll(MediColors.primary),
+                  ),
+                );
+              }
+              if (state is PauseHomeState) {
+                return IconButton(
+                  onPressed: controller.resume,
+                  icon: const Icon(Icons.play_arrow_rounded),
+                  style: const ButtonStyle(
+                    iconSize: WidgetStatePropertyAll(75),
+                    iconColor: WidgetStatePropertyAll(MediColors.primary),
+                  ),
+                );
+              }
+              return Container();
+            },
+          ),
+          IconButton(
+            onPressed: controller.stop,
+            icon: const Icon(Icons.stop),
           ),
         ],
       ),
