@@ -12,11 +12,11 @@ class MediDrawer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            padding: const EdgeInsets.all(16),
+          SizedBox(
             width: double.maxFinite,
-            color: MediColors.primary,
-            child: SafeArea(
+            child: DrawerHeader(
+              padding: const EdgeInsets.only(left: 16, top: 8),
+              decoration: const BoxDecoration(color: MediColors.primary),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -27,7 +27,6 @@ class MediDrawer extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   const Text('Douglas Silva', style: TextStyle(fontSize: 16)),
-                  const SizedBox(height: 8),
                   const Text('example@gmail.com'),
                 ],
               ),
