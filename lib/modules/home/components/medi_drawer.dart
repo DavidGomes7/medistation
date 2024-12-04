@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../theme/theme.dart';
+import '../../../routes/routes.dart';
 
 class MediDrawer extends StatelessWidget {
   const MediDrawer({super.key});
@@ -36,18 +37,17 @@ class MediDrawer extends StatelessWidget {
           const ListTile(
             leading: Icon(Icons.person),
             title: Text('Perfil'),
-          ),
-          const ListTile(
-            leading: Icon(Icons.av_timer),
-            title: Text('Meditação'),
+            onTap: MediNavigator.profile,
           ),
           const ListTile(
             leading: Icon(Icons.tips_and_updates),
             title: Text('Dicas'),
+            onTap: MediNavigator.tips,
           ),
           const ListTile(
             leading: Icon(Icons.notes),
             title: Text('Metas e Premiações'),
+            onTap: MediNavigator.goal,
           ),
           const ListTile(
             leading: Icon(Icons.medical_information),
@@ -56,6 +56,7 @@ class MediDrawer extends StatelessWidget {
           const ListTile(
             leading: Icon(Icons.notifications),
             title: Text('Notificações e lembretes'),
+            onTap: MediNavigator.notification,
           ),
           const Divider(),
           const ListTile(
