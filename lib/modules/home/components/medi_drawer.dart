@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../theme/theme.dart';
 import '../../../routes/routes.dart';
+import '../../../theme/theme.dart';
 
 class MediDrawer extends StatelessWidget {
   const MediDrawer({super.key});
@@ -9,28 +9,18 @@ class MediDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
+        padding: EdgeInsets.zero,
         children: [
-          SizedBox(
-            width: double.maxFinite,
-            child: DrawerHeader(
-              padding: const EdgeInsets.only(left: 16, top: 8),
-              decoration: const BoxDecoration(color: MediColors.primary),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundColor: MediColors.background.withOpacity(0.5),
-                    child: const Icon(Icons.person),
-                  ),
-                  const SizedBox(height: 8),
-                  const Text('Douglas Silva', style: TextStyle(fontSize: 16)),
-                  const Text('example@gmail.com'),
-                ],
-              ),
+          UserAccountsDrawerHeader(
+            decoration: const BoxDecoration(color: MediColors.primary),
+            currentAccountPicture: CircleAvatar(
+              backgroundColor: MediColors.background.withOpacity(0.5),
+              child: const Icon(Icons.person),
             ),
+            accountName: const Text('Douglas Silva', style: TextStyle(fontSize: 16)),
+            accountEmail: const Text('example@gmail.com'),
+            // currentAccountPictureSize: Size(70, 70),
           ),
           const SizedBox(height: 8),
           const ListTile(
@@ -51,6 +41,7 @@ class MediDrawer extends StatelessWidget {
           const ListTile(
             leading: Icon(Icons.medical_information),
             title: Text('Exercícios respiratórios'),
+            onTap: MediNavigator.exercise,
           ),
           const ListTile(
             leading: Icon(Icons.notifications),

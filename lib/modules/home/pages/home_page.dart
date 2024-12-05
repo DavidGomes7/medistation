@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HomeTemplate(
-      controller: injector.get<HomeCubit>(),
+      controller: injector.get<HomeCubit>()..init(),
     );
   }
 }
