@@ -32,4 +32,8 @@ abstract class MediNavigator {
   static Future<void> tips() {
     return router.pushNamed(TipsRoutes.tips);
   }
+
+  static Future<void> exercise() {
+    return router.pushNamed(ExeciseRoutes.exercise);
+  }
 }
