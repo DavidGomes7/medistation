@@ -10,9 +10,10 @@ class MediThemeData {
 
 class _MediTheme {
   static ThemeData get mediTheme => ThemeData(
-      scaffoldBackgroundColor: MediColors.background,
-      appBarTheme: const AppBarTheme(
-        color: MediColors.background,
-      ),
-      drawerTheme: DrawerThemeData(backgroundColor: MediColors.background));
+        scaffoldBackgroundColor: MediColors.background,
+        appBarTheme: const AppBarTheme(
+          color: MediColors.background,
+        ),
+        drawerTheme: const DrawerThemeData(backgroundColor: MediColors.background),
+      );
 }
