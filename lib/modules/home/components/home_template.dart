@@ -1,4 +1,3 @@
-import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -6,6 +5,7 @@ import '../../../theme/theme.dart';
 import '../../modules.dart';
 import '../controller/home_state.dart';
 import 'components.dart';
+import 'home_count_down_timer.dart';
 
 class HomeTemplate extends StatelessWidget {
   const HomeTemplate({super.key, required this.controller});
@@ -21,22 +21,8 @@ class HomeTemplate extends StatelessWidget {
         backgroundColor: MediColors.primary,
       ),
       drawer: const MediDrawer(),
-      body: ListView(
-        children: [
-          SizedBox(height: MediaQuery.of(context).size.height / 4),
-          CircularCountDownTimer(
-            controller: controller.countDownController,
-            autoStart: false,
-            width: 250,
-            height: 250,
-            duration: 172,
-            strokeWidth: 20,
-            strokeCap: StrokeCap.round,
-            textStyle: const TextStyle(fontSize: 33),
-            fillColor: MediColors.primary,
-            ringColor: MediColors.textPrimary.withOpacity(0.08),
-          ),
-        ],
+      body: Center(
+        child: HomeCountDownTimer(controller: controller.countDownController),
       ),
       bottomNavigationBar: Row(
         mainAxisAlignment: MainAxisAlignment.center,
