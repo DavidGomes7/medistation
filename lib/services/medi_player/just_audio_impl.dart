@@ -3,30 +3,34 @@ import 'package:just_audio/just_audio.dart';
 import 'medi_player.dart';
 
 class JustAudioImpl extends MediPlayer {
-  final player = AudioPlayer();
+  final _player = AudioPlayer();
+
+  void init(String url) {
+    _player.setUrl(url);
+  }
 
   @override
   Future<void> pause() async {
-    await player.pause();
+    await _player.pause();
   }
 
   @override
   Future<void> play() async {
-    await player.play();
+    await _player.play();
   }
 
   @override
   Future<void> resume() async {
-    await player.play();
+    await _player.play();
   }
 
   @override
   Future<void> stop() async {
-    await player.stop();
+    await _player.stop();
   }
 
   @override
   Future<void> restart() async {
-    await player.load();
+    await _player.load();
   }
 }
