@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../routes/routes.dart';
 import '../../../theme/theme.dart';
 
-class MediDrawer extends StatelessWidget {
-  const MediDrawer({super.key});
+class HomeMediDrawer extends StatelessWidget {
+  const HomeMediDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,6 @@ class MediDrawer extends StatelessWidget {
             ),
             accountName: const Text('Douglas Silva', style: TextStyle(fontSize: 16)),
             accountEmail: const Text('example@gmail.com'),
-            // currentAccountPictureSize: Size(70, 70),
           ),
           const SizedBox(height: 8),
           const ListTile(
