@@ -5,7 +5,6 @@ import '../../../theme/theme.dart';
 import '../../modules.dart';
 import '../controller/home_state.dart';
 import 'components.dart';
-import 'home_count_down_timer.dart';
 
 class HomeTemplate extends StatelessWidget {
   const HomeTemplate({super.key, required this.controller});
@@ -20,7 +19,7 @@ class HomeTemplate extends StatelessWidget {
         centerTitle: true,
         backgroundColor: MediColors.primary,
       ),
-      drawer: const MediDrawer(),
+      drawer: const HomeMediDrawer(),
       body: Center(
         child: HomeCountDownTimer(controller: controller.countDownController),
       ),
