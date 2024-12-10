@@ -1,5 +1,3 @@
-import 'just_audio_impl.dart';
-
 abstract class MediPlayer {
   Future<void> play();
   Future<void> pause();
@@ -7,5 +5,3 @@ abstract class MediPlayer {
   Future<void> resume();
   Future<void> restart();
 }
-
-final mediPlayer = JustAudioImpl();
