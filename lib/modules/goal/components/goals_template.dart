@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../../../theme/theme.dart';
 import '../controller/controller.dart';
+import 'components.dart';
 
 class GoalsTemplate extends StatelessWidget {
   const GoalsTemplate({super.key, required this.controller});
@@ -19,26 +19,12 @@ class GoalsTemplate extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          const SizedBox(
-            child: Text(
-              'David Gomes',
-              style: TextStyle(fontSize: 25),
-            ),
+          const Text(
+            'David Gomes',
+            style: TextStyle(fontSize: 25),
           ),
-          SizedBox(
-            child: Row(
-              children: [Text('Lv: $controller.level')],
-            ),
-          ),
-          LinearPercentIndicator(
-            width: 200,
-            lineHeight: 8,
-            backgroundColor: Colors.grey[300],
-            progressColor: Colors.lightBlue,
-            percent: controller.currentXpPercentage,
-            animation: true,
-            animationDuration: 1500,
-          ),
+          Text('Lv: $controller.level'),
+          GoalsLinearIndicator(percent: controller.currentXpPercentage),
           Text('To next level: $controller.nlvdifferenceInt XP'),
           Container(
             padding: const EdgeInsets.all(12),
