@@ -1,1 +1,1 @@
-export 'goal_cubit.dart';
+export 'goals_cubit.dart';

@@ -1,1 +1,1 @@
-export 'goal_page.dart';
+export 'goals_page.dart';
