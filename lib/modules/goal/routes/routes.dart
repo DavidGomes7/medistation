@@ -1,2 +1,2 @@
-export 'goal_pags.dart';
-export 'goal_routes.dart';
+export 'goals_pages.dart';
+export 'goals_routes.dart';

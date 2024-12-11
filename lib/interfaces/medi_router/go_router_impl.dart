@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 
-import '../interfaces.dart';
+import 'medi_router.dart';
 
 class GoRouterImpl implements MediRouter {
   const GoRouterImpl(this.router);

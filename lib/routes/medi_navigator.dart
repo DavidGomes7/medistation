@@ -1,4 +1,4 @@
-import '../interfaces/interfaces.dart';
+import '../interfaces/intefaces.dart';
 import '../modules/modules.dart';
 import 'medi_pages.dart';
 
@@ -18,7 +18,7 @@ abstract class MediNavigator {
   }
 
   static Future<void> goal() {
-    return router.pushNamed(GoalRoutes.goal);
+    return router.pushNamed(GoalsRoutes.goals);
   }
 
   static Future<void> notification() {

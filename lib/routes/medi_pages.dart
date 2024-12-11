@@ -14,7 +14,7 @@ abstract class MediPages {
       ...AuthPages.routes,
       ...HomePages.routes,
       ...ExercisePages.routes,
-      ...GoalPags.routes,
+      ...GoalsPages.routes,
       ...NotificationPages.routes,
       ...ProfilePages.routes,
       ...TipsPages.routes,

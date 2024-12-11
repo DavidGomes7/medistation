@@ -13,7 +13,7 @@ class GetItImpl implements MediInjector {
   void _register() {
     _getIt.registerLazySingleton<AuthCubit>(AuthCubit.new);
     _getIt.registerLazySingleton<ExerciseCubit>(ExerciseCubit.new);
-    _getIt.registerLazySingleton<GoalCubit>(GoalCubit.new);
+    _getIt.registerLazySingleton<GoalsCubit>(GoalsCubit.new);
     _getIt.registerLazySingleton<HomeCubit>(HomeCubit.new);
     _getIt.registerLazySingleton<NotificationCubit>(NotificationCubit.new);
     _getIt.registerLazySingleton<ProfileCubit>(ProfileCubit.new);
