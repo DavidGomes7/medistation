@@ -6,12 +6,13 @@ class TipsBox extends StatelessWidget{
   final String title;
   final String content;
   final IconData icon;
-  final EdgeInsetsGeometry? margin;
+  final EdgeInsets? margin;
   const TipsBox({super.key, required this.title, required this.content, required this.icon, this.margin});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: margin,
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: MediColors.background,
