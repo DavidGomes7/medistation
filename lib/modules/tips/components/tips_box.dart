@@ -6,7 +6,8 @@ class TipsBox extends StatelessWidget{
   final String title;
   final String content;
   final IconData icon;
-  const TipsBox({super.key, required this.title, required this.content, required this.icon});
+  final EdgeInsetsGeometry? margin;
+  const TipsBox({super.key, required this.title, required this.content, required this.icon, this.margin});
 
   @override
   Widget build(BuildContext context) {
