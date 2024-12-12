@@ -7,12 +7,12 @@ sealed class TipsState extends Equatable {
   List<Object> get props => [];
 }
 
-final class InitialTipsState extends TipsState {}
+final class TipsInitial extends TipsState {}
 
-final class LoadingTipsState extends TipsState {}
+final class TipsLoading extends TipsState {}
 
-final class ErrorTipsState extends TipsState {
-  const ErrorTipsState(this.error);
+final class TipsError extends TipsState {
+  const TipsError(this.error);
 
   final String error;
 

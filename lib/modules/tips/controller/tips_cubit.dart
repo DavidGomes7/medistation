@@ -4,5 +4,5 @@ import 'package:equatable/equatable.dart';
 part 'tips_state.dart';
 
 class TipsCubit extends Cubit<TipsState> {
-  TipsCubit() : super(InitialTipsState());
+  TipsCubit() : super(TipsInitial());
 }
